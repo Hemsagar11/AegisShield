@@ -1,7 +1,5 @@
 # AegisShield : The Malware Detection Program
-<p align="center">
-  <img src="./assets/AegisShield-Logo.png" alt="AegisShield Logo">
-</p>
+![Logo](./Assets/AegisShield-Logo.png)
 
 **Author:** Hem Sagar \
 **Date:** June 27, 2024
