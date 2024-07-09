@@ -1,4 +1,7 @@
 # AegisShield : The Malware Detection Program
+<p align="center">
+  <img src="./assets/AegisShield-Logo.png" alt="AegisShield Logo">
+</p>
 
 **Author:** Hem Sagar \
 **Date:** June 27, 2024
@@ -24,11 +27,11 @@
 
 **Objective:** To create a tool that can scan files for known malware signatures and check file hashes against the VirusTotal database.
 
-**Tools and Technologies:** Python, YARA, VirusTotal API, ClamAV.
+**Tools and Technologies:** Python, YARA, VirusTotal API.
 
 **System Architecture:**
 - File selection module
-- Hashing and signature comparison
+- Hashing and signature comparison (YARA)
 - VirusTotal API integration
 - Output generation
 
@@ -60,18 +63,23 @@
     ```bash
     pip install -r requirements.txt
 5. Configure VirusTotal API key: Set your API key in the configuration file.
+6. Exit from the isolated environment:
+    ```bash
+    deactivate # enter this when inside the venv
+    ```
 
 ## 5. Usage
 
 **Running the Program:**
 To start the program, run:
 ```bash
-python aegis_shield.py
+python aegis_shield.py [Arguments]
 ```
 **Command-Line Arguments:**
 ```bash
---directory: Specify the directory to scan.
---file: Specify a single file to scan.
+-d, --directory: Specify the directory to scan.
+-f, --file: Specify a single file to scan.
+--hash: Specify the hashing algorithm.
 ```
 **Example Usage:**
 ```bash
@@ -83,14 +91,13 @@ python aegis_shield.py --file /path/to/file.exe
 ## 6. Testing
 
 **Test Cases:**
-- **Malware Samples:** Scanned known malware samples to verify detection.
-- **Clean Files:** Ensured no false positives with clean files.
+- **Malware Samples:** Scanned known malware samples to verify detection. Samples -> [MalwareBazaar](https://bazaar.abuse.ch)
+- **Clean Files:** Ensured no false positives with clean files. 
 - **Edge Cases:** Tested with large files and various file types.
 
 **Test Results:**
 - Successfully detected all known malware samples.
 - No false positives with clean files.
-- Performance was acceptable for large files.
 
 ## 7. Limitations
 
@@ -113,4 +120,3 @@ python aegis_shield.py --file /path/to/file.exe
 
 - [YARA Documentation](https://yara.readthedocs.io/)
 - [VirusTotal API Documentation](https://developers.virustotal.com/reference/overview)
-- [ClamAV Documentation](https://docs.clamav.net/)
