@@ -64,10 +64,12 @@
 4. Install dependencies:
     ```bash
     pip install -r requirements.txt
-5. Configure VirusTotal API key: Set your API key in the configuration file.
-6. Exit from the isolated environment:
-    ```bash
-    deactivate # enter this when inside the venv
+5. Configure Environment Variables:
+    - Create a .env file inside the project directory.
+    - Set your API key & Yara rule path in the .env file as
+    ```
+    VIRUSTOTAL_API_KEY= "Your API Key"
+    YARA_RULES_PATH= path/to/yara-rules
     ```
 
 ## 5. Usage
@@ -88,6 +90,8 @@ python aegis_shield.py [Arguments]
 python aegis_shield.py --directory /path/to/scan
 python aegis_shield.py --file /path/to/file.exe
 ```
+> **Note:**
+> To Exit the virtual isolated environment, run the command **deactivate** in the terminal.
 
 
 ## 6. Testing
@@ -99,7 +103,9 @@ python aegis_shield.py --file /path/to/file.exe
 
 **Test Results:**
 - Successfully detected all known malware samples.
-- No false positives with clean files.
+- No false positives with clean files.<br>
+
+![Results](./Assets/Test-results.png)
 
 ## 7. Limitations
 
